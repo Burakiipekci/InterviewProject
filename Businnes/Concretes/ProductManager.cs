@@ -40,11 +40,8 @@ namespace Businnes.Concretes
             return new SuccessDataResult<List<Product>>(_productDal.GetAll(), Messages.Listed);
         }
 
-        public IDataResult<List<Product>> GetByCategory(string category)
+        public IDataResult<List<Product>> GetByCategory(int category)
         {
-            if (category == null)
-                return new SuccessDataResult<List<Product>>(_productDal.GetAll());
-            else
                 return new SuccessDataResult<List<Product>>(_productDal.GetAll(x => x.Category == category));
         }
 

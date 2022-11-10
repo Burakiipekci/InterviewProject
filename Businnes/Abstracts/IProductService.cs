@@ -14,7 +14,7 @@ namespace Businnes.Abstracts
     {
         IDataResult<List<Product>> GetAll();
         IDataResult<List<Product>> GetById(int id);
-        IDataResult<List<Product>> GetByCategory(string category);
+        IDataResult<List<Product>> GetByCategory(int category);
         IResult Add(Product brand);
         IResult Delete(Product brand);
         IResult Update(Product brand);

@@ -1,3 +1,7 @@
+using Autofac.Core;
+using Core.DependencyResolvers;
+using Core.Extensions;
+using Core.Utilities.IoC;
 using DataAccess.Connection;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -5,6 +9,9 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<AppDbContext>(); // Yapýlcak
+builder.Services.AddDependencyResolvers(new ICoreModule[]{
+                new CoreModule()
+                });
 
 var app = builder.Build();
 
